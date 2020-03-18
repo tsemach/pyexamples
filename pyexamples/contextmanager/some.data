@@ -1,0 +1,2 @@
+this is a test of context-manager
+Make sure resources are properly closed

@@ -1,0 +1,4 @@
+"""
+Generator with 'send' example
+"""
+

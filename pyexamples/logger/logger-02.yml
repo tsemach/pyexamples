@@ -1,0 +1,48 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: '%(funcName)s %(name)s %(levelname)-5s %(message)s'
+
+  complex:
+    format: '%(name)s %(levelname)-5s %(message)s'
+
+handlers:
+  console:
+    class : logging.StreamHandler
+    level   : DEBUG
+    formatter: simple
+    stream  : ext://sys.stdout
+
+  file:
+    class : logging.handlers.RotatingFileHandler
+    filename: logger-02.log
+    formatter: complex
+    maxBytes: 1024
+    backupCount: 3
+
+loggers:
+  main:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  module_a:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+
+  module_a.doit:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+  module_b:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+
+root:
+  level: INFO
+  handlers: [console, file]

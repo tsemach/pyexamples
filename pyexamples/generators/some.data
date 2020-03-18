@@ -1,0 +1,7 @@
+some:data:name = test
+some:data:output = "this is a test"
+some:data:status = 0
+
+more:info:name = test
+more:info:output = "this is a test"
+more:info:status = 0
